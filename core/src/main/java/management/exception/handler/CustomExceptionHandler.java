@@ -1,4 +1,4 @@
-package management.exceptionHandler;
+package management.exception.handler;
 
 import exception.FootballerNotFoundException;
 import lombok.AllArgsConstructor;
@@ -9,13 +9,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @AllArgsConstructor
 @RestControllerAdvice
-public class ResponseEntityExceptionHandler extends org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler {
+public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     private ErrorAttributes errorAttributes;
 
     private Map<String, Object> getErrorAttributes(WebRequest webRequest) {
