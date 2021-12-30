@@ -1,4 +1,4 @@
-package management.exceptionHandler;
+package management.exception.handler;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
