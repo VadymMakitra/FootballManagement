@@ -1,6 +1,6 @@
 package management.exception.handler;
 
-import exception.FootballerNotFoundException;
+import management.exception.FootballerNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
@@ -27,8 +27,8 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     /**
      * Method for intercept {@link FootballerNotFoundException}.
      *
-     * @param request contain info about thrown exception
-     * @return {@link ResponseEntity} that contain http status and message of thrown exception.
+     * @param request contain info about thrown management.exception
+     * @return {@link ResponseEntity} that contain http status and message of thrown management.exception.
      */
     @ExceptionHandler({FootballerNotFoundException.class})
     public final ResponseEntity<Object> handleCertificateNotFound(WebRequest request) {

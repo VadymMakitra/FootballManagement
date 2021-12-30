@@ -4,20 +4,18 @@ import management.constant.ErrorMessage;
 import management.dto.AllInfoAboutFootballerDto;
 import management.dto.EditInfoAboutFootballerDto;
 import management.dto.FootballerDto;
-import exception.FootballerNotFoundException;
+import management.exception.FootballerNotFoundException;
 import lombok.AllArgsConstructor;
 import management.entity.Footballer;
 import management.repository.FootballerRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
-@Validated
 public class FootballerServiceImpl implements FootballerService {
     private final FootballerRepository footballerRepository;
     private final ModelMapper modelMapper;

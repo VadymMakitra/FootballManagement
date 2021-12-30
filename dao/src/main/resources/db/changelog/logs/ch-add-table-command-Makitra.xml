@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="Makitra-2" author="Makitra Vadym">
+        <createTable tableName="commands">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="commission" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="budget" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addColumn tableName="footballers">
+            <column name="command_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="footballers"
+                                 baseColumnNames="command_id"
+                                 constraintName="fk_footballers_to_command_id"
+                                 referencedTableName="commands"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

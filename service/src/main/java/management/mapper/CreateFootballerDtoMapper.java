@@ -1,4 +1,4 @@
-package mapper;
+package management.mapper;
 
 import management.dto.FootballerDto;
 import management.entity.Footballer;

@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Builder
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -25,6 +26,10 @@ public class Footballer {
     public Integer age;
     @Column
     public Integer experience;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "command_id",nullable = false)
+    Command command;
 
     public String getFullName() {
         return firstName + " " + lastName;
