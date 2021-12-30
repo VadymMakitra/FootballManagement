@@ -7,12 +7,14 @@ import lombok.AllArgsConstructor;
 import management.service.FootballerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@Validated
 @RequestMapping("/footballer")
 public class FootballerController {
     private final FootballerService footballerService;

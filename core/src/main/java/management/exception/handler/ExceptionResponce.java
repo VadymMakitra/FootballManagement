@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.Map;
 
 /**
- * Response object with information of occur exception.
+ * Response object with information of occur management.exception.
  */
 @Data
 @NoArgsConstructor
