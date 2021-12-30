@@ -6,6 +6,7 @@ package management.exception;
 public class FootballerNotFoundException extends RuntimeException {
     /**
      * Constructor with message.
+     *
      * @param message - management.exception text
      */
     public FootballerNotFoundException(String message) {

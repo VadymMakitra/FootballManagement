@@ -10,8 +10,8 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
+@ToString(exclude = "command")
+@EqualsAndHashCode(exclude = {"command"})
 @Table(name = "footballers")
 @Entity
 public class Footballer {
@@ -28,7 +28,7 @@ public class Footballer {
     public Integer experience;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "command_id",nullable = false)
+    @JoinColumn(name = "command_id", nullable = false)
     Command command;
 
     public String getFullName() {

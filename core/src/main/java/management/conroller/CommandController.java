@@ -56,7 +56,7 @@ public class CommandController {
     /**
      * Controller for deleting command.
      *
-     * @param id of command thaat need to delete
+     * @param id of command that need to delete
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteCommand(

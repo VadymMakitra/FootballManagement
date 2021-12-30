@@ -1,9 +1,9 @@
 package management.conroller;
 
+import lombok.AllArgsConstructor;
 import management.dto.AllInfoAboutFootballerDto;
 import management.dto.EditInfoAboutFootballerDto;
 import management.dto.FootballerDto;
-import lombok.AllArgsConstructor;
 import management.service.FootballerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
