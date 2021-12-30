@@ -1,6 +1,6 @@
 package mapper;
 
-import dto.AllInfoAboutFootballerDto;
+import management.dto.AllInfoAboutFootballerDto;
 import management.entity.Footballer;
 import org.modelmapper.AbstractConverter;
 import org.springframework.stereotype.Component;

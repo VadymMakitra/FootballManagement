@@ -1,4 +1,4 @@
-package management;
+package management.service;
 
 public interface ManagementService {
 }
