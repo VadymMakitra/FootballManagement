@@ -1,8 +1,8 @@
-package management;
+package management.service;
 
-import dto.AllInfoAboutFootballerDto;
-import dto.EditInfoAboutFootballerDto;
-import dto.FootballerDto;
+import management.dto.AllInfoAboutFootballerDto;
+import management.dto.EditInfoAboutFootballerDto;
+import management.dto.FootballerDto;
 
 import java.util.List;
 

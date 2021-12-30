@@ -1,12 +1,11 @@
 package management.service;
 
-import constant.ErrorMessage;
-import dto.AllInfoAboutFootballerDto;
-import dto.EditInfoAboutFootballerDto;
-import dto.FootballerDto;
+import management.constant.ErrorMessage;
+import management.dto.AllInfoAboutFootballerDto;
+import management.dto.EditInfoAboutFootballerDto;
+import management.dto.FootballerDto;
 import exception.FootballerNotFoundException;
 import lombok.AllArgsConstructor;
-import management.FootballerService;
 import management.entity.Footballer;
 import management.repository.FootballerRepository;
 import org.modelmapper.ModelMapper;
