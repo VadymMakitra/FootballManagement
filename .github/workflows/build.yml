@@ -2,8 +2,9 @@ name: Build
 on:
   push:
     branches: [ master, dev ]
-    pull_request:
-      branches: [ master, dev ]
+  pull_request:
+    branches: [ master, dev ]
+    workflow_dispatch:
 jobs:
   build:
     name: Build
@@ -33,3 +34,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=VadymMakitra_FootballManagement
+      - name: Deploy 🚀
+          if: ${{ github.event_name == 'push' }}
+          uses: JamesIves/github-pages-deploy-action@3.7.1
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: .
+            CLEAN: true
