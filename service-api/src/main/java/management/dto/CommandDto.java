@@ -2,10 +2,7 @@ package management.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.util.List;
 
 @Getter
@@ -15,7 +12,8 @@ import java.util.List;
 @EqualsAndHashCode
 @ToString
 public class CommandDto {
-    @NotEmpty
+    @Pattern(regexp = "[A-Za-zА-Яа-яёЁЇїІіЄєҐґ']*", message = "use only English,Ukrainian or Russian letters")
+    @NotEmpty(message = "name must not be empty")
     @NotNull
     private String name;
     @Min(1)

@@ -19,4 +19,5 @@ public class AllInfoAboutFootballerDto {
     @Min(1)
     @Max(60)
     private Integer age;
+    private InfoAboutFootballerCommandDto infoAboutCommandDto;
 }
