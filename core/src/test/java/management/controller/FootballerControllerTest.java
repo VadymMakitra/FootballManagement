@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
-public class FootballerControllerTest {
+class FootballerControllerTest {
     private static final String FOOTBALLER_LINK = "/footballer";
     private MockMvc mockMvc;
     private final ErrorAttributes errorAttributes = new DefaultErrorAttributes();

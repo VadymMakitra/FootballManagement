@@ -13,8 +13,6 @@ import management.repository.CommandRepository;
 import management.repository.FootballerRepository;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-
 @Service
 @AllArgsConstructor
 public class ManagementServiceImp implements ManagementService {
