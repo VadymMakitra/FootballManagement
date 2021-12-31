@@ -1,7 +1,10 @@
 package management.exception.handler;
 
-import management.exception.FootballerNotFoundException;
 import lombok.AllArgsConstructor;
+import management.exception.CommandNotFoundException;
+import management.exception.FootballerAlreadyInCommandException;
+import management.exception.FootballerNotFoundException;
+import management.exception.NotEnoughBudgetException;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.http.HttpStatus;
@@ -25,14 +28,26 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     /**
-     * Method for intercept {@link FootballerNotFoundException}.
+     * Method for intercept {@link FootballerAlreadyInCommandException,NotEnoughBudgetException}.
      *
-     * @param request contain info about thrown management.exception
-     * @return {@link ResponseEntity} that contain http status and message of thrown management.exception.
+     * @param request contain info about thrown exception
+     * @return {@link ResponseEntity} that contain http status and message of thrown exception
      */
-    @ExceptionHandler({FootballerNotFoundException.class})
-    public final ResponseEntity<Object> handleCertificateNotFound(WebRequest request) {
-        ExceptionResponce exceptionResponse = new ExceptionResponce(getErrorAttributes(request));
+    @ExceptionHandler({FootballerNotFoundException.class, CommandNotFoundException.class,})
+    public final ResponseEntity<Object> handleNotFoundException(WebRequest request) {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(getErrorAttributes(request));
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exceptionResponse);
+    }
+
+    /**
+     * Method for intercept {@link FootballerAlreadyInCommandException,NotEnoughBudgetException}.
+     *
+     * @param request contain info about thrown exception
+     * @return {@link ResponseEntity} that contain http status and message of thrown exception
+     */
+    @ExceptionHandler({FootballerAlreadyInCommandException.class, NotEnoughBudgetException.class})
+    public final ResponseEntity<Object> handleBadRequestException(WebRequest request) {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(getErrorAttributes(request));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionResponse);
     }
 }

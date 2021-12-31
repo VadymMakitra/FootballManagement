@@ -2,10 +2,7 @@ package management.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 @Getter
 @NoArgsConstructor
@@ -14,15 +11,20 @@ import javax.validation.constraints.NotNull;
 @EqualsAndHashCode
 @ToString
 public class FootballerDto {
-    @NotEmpty
+    @Pattern(regexp = "[A-Za-zА-Яа-яёЁЇїІіЄєҐґ']*", message = "use only English,Ukrainian or Russian letters")
+    @NotEmpty(message = "first name must not be empty")
     @NotNull
     private String firstName;
-    @NotEmpty
+    @Pattern(regexp = "[A-Za-zА-Яа-яёЁЇїІіЄєҐґ']*", message = "use only English,Ukrainian or Russian letters")
+    @NotEmpty(message = "last name must not be empty")
     @NotNull
     private String lastName;
     @NotNull
+    @Max(40)
     private Integer experience;
-    @Min(1)
+    @Min(18)
     @Max(60)
     private Integer age;
+    @Min(1)
+    private Long commandId;
 }

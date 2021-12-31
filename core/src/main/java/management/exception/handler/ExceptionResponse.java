@@ -10,13 +10,13 @@ import java.util.Map;
  */
 @Data
 @NoArgsConstructor
-public class ExceptionResponce {
+public class ExceptionResponse {
     private String message;
 
     /**
      * Constructor with parameters.
      */
-    public ExceptionResponce(Map<String, Object> errorAttributes) {
+    public ExceptionResponse(Map<String, Object> errorAttributes) {
         this.setMessage((String) errorAttributes.get("message"));
     }
 }

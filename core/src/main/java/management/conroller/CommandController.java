@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -25,7 +26,7 @@ public class CommandController {
      */
     @PostMapping("/add")
     public ResponseEntity<HttpStatus> addNewCommand(
-            @RequestBody CommandDto dto) {
+            @Valid @RequestBody CommandDto dto) {
         commandService.addCommand(dto);
         return ResponseEntity.status(201).build();
     }
@@ -48,7 +49,7 @@ public class CommandController {
      */
     @PatchMapping("/{id}")
     public ResponseEntity<HttpStatus> editCommands(
-            @PathVariable Long id, @RequestBody CommandDto dto) {
+            @PathVariable Long id, @Valid @RequestBody CommandDto dto) {
         commandService.editInfoAboutCommand(id, dto);
         return ResponseEntity.status(200).build();
     }
@@ -56,7 +57,7 @@ public class CommandController {
     /**
      * Controller for deleting command.
      *
-     * @param id of command thaat need to delete
+     * @param id of command that need to delete
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteCommand(

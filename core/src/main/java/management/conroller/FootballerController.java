@@ -1,15 +1,16 @@
 package management.conroller;
 
+import lombok.AllArgsConstructor;
 import management.dto.AllInfoAboutFootballerDto;
 import management.dto.EditInfoAboutFootballerDto;
 import management.dto.FootballerDto;
-import lombok.AllArgsConstructor;
 import management.service.FootballerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,7 @@ public class FootballerController {
      */
     @PostMapping("/add")
     public ResponseEntity<HttpStatus> addNewFootballer(
-            @RequestBody FootballerDto dto) {
+            @Valid @RequestBody FootballerDto dto) {
         footballerService.addFootballer(dto);
         return ResponseEntity.status(201).build();
     }
@@ -49,7 +50,7 @@ public class FootballerController {
      */
     @PatchMapping("/{id}")
     public ResponseEntity<HttpStatus> editInfo(
-            @PathVariable Long id, @RequestBody EditInfoAboutFootballerDto dto) {
+            @PathVariable Long id, @Valid @RequestBody EditInfoAboutFootballerDto dto) {
         footballerService.editInfoAboutFootballer(id, dto);
         return ResponseEntity.status(200).build();
     }

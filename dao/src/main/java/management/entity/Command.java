@@ -9,8 +9,8 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode
+@ToString(exclude = {"footballers"})
+@EqualsAndHashCode(exclude = {"footballers"})
 @Table(name = "commands")
 @Entity
 public class Command {
@@ -27,6 +27,6 @@ public class Command {
     @Column
     public Long budget;
 
-    @OneToMany(mappedBy = "command",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "command", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Footballer> footballers;
 }
