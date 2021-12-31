@@ -1,11 +1,12 @@
 package management.service;
 
+import management.dto.TransferDto;
+
 public interface ManagementService {
     /**
      * Method for transfer footballer to another team.
      *
-     * @param footballerId ID of the footballer that needs transfer
-     * @param commandId    id of command for transfer footballer
+     * @param transferDto dto with parameters for transfer
      */
-    void transferFootballer(Long footballerId, Long commandId);
+    void transferFootballer(TransferDto transferDto);
 }

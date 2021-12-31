@@ -2,6 +2,7 @@ package management.service;
 
 import lombok.AllArgsConstructor;
 import management.constant.ErrorMessage;
+import management.dto.TransferDto;
 import management.entity.Command;
 import management.entity.Footballer;
 import management.exception.CommandNotFoundException;
@@ -12,6 +13,8 @@ import management.repository.CommandRepository;
 import management.repository.FootballerRepository;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 @AllArgsConstructor
 public class ManagementServiceImp implements ManagementService {
@@ -19,10 +22,10 @@ public class ManagementServiceImp implements ManagementService {
     private final FootballerRepository footballerRepository;
 
     @Override
-    public void transferFootballer(Long footballerId, Long commandId) {
-        Footballer footballer = footballerRepository.findById(footballerId).orElseThrow(
+    public void transferFootballer(TransferDto dto) {
+        Footballer footballer = footballerRepository.findById(dto.getFootballerId()).orElseThrow(
                 () -> new FootballerNotFoundException(ErrorMessage.FOOTBALLER_NOT_EXIST));
-        Command command = commandRepository.findById(commandId).orElseThrow(
+        Command command = commandRepository.findById(dto.getCommandId()).orElseThrow(
                 () -> new CommandNotFoundException(ErrorMessage.COMMAND_NOT_EXIST));
 
         checkIfFootballerAlreadyInCommand(command, footballer);

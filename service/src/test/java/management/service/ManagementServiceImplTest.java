@@ -1,6 +1,7 @@
 package management.service;
 
 import management.ModelUtils;
+import management.dto.TransferDto;
 import management.entity.Command;
 import management.entity.Footballer;
 import management.exception.CommandNotFoundException;
@@ -31,13 +32,14 @@ public class ManagementServiceImplTest {
     void transferFootballerTest(){
         Footballer footballer = ModelUtils.getFootballer();
         Command newCommand = ModelUtils.getNewCommand();
+        TransferDto transferDto = ModelUtils.getTransferDto();
 
         when(footballerRepository.findById(1L)).thenReturn(Optional.of(footballer));
         when(commandRepository.findById(2L)).thenReturn(Optional.of(newCommand));
         when(footballerRepository.save(footballer)).thenReturn(footballer);
         when(commandRepository.save(newCommand)).thenReturn(newCommand);
 
-        managementService.transferFootballer(1L,2L);
+        managementService.transferFootballer(transferDto);
 
         verify(footballerRepository).findById(1L);
         verify(commandRepository).findById(2L);
@@ -49,7 +51,7 @@ public class ManagementServiceImplTest {
     void transferFootballerThrowsFootballerNotFoundExceptionTest(){
         when(footballerRepository.findById(1L)).thenReturn(Optional.empty());
 
-        assertThrows(FootballerNotFoundException.class,()->managementService.transferFootballer(1L,2L));
+        assertThrows(FootballerNotFoundException.class,()->managementService.transferFootballer(ModelUtils.getTransferDto()));
 
         verify(footballerRepository).findById(1L);
     }
@@ -61,7 +63,7 @@ public class ManagementServiceImplTest {
         when(footballerRepository.findById(1L)).thenReturn(Optional.of(footballer));
         when(commandRepository.findById(2L)).thenReturn(Optional.empty());
 
-        assertThrows(CommandNotFoundException.class,()->managementService.transferFootballer(1L,2L));
+        assertThrows(CommandNotFoundException.class,()->managementService.transferFootballer(ModelUtils.getTransferDto()));
 
         verify(footballerRepository).findById(1L);
         verify(commandRepository).findById(2L);
@@ -77,7 +79,7 @@ public class ManagementServiceImplTest {
         when(footballerRepository.save(footballer)).thenReturn(footballer);
         when(commandRepository.save(newCommand)).thenReturn(newCommand);
 
-        managementService.transferFootballer(1L,1L);
+        managementService.transferFootballer(ModelUtils.getTransferDto());
 
         verify(footballerRepository).findById(1L);
         verify(commandRepository).findById(1L);
