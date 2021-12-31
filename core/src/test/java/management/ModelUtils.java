@@ -4,7 +4,6 @@ import management.dto.CommandDto;
 import management.dto.EditInfoAboutFootballerDto;
 import management.dto.FootballerDto;
 import management.dto.TransferDto;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
@@ -48,9 +47,10 @@ public class ModelUtils {
                 .build();
     }
 
-    public static TransferDto getTransferDto(){
+    public static TransferDto getTransferDto() {
         return TransferDto.builder()
                 .footballerId(1L)
-                .commandId(2L).build();
+                .commandId(2L)
+                .build();
     }
 }

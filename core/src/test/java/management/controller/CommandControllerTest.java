@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
-public class CommandControllerTest {
+class CommandControllerTest {
     private static final String commandLink = "/command";
     private MockMvc mockMvc;
     private final ErrorAttributes errorAttributes = new DefaultErrorAttributes();
@@ -64,15 +64,15 @@ public class CommandControllerTest {
         ObjectMapper objectMapper = new ObjectMapper();
         String requestedJson = objectMapper.writeValueAsString(commandDto);
 
-        mockMvc.perform(patch(commandLink + "/{id}",1)
+        mockMvc.perform(patch(commandLink + "/{id}", 1)
                         .content(requestedJson)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
     @Test
-    void deleteCommandsTest() throws Exception{
-        mockMvc.perform(delete(commandLink + "/{id}",1))
+    void deleteCommandsTest() throws Exception {
+        mockMvc.perform(delete(commandLink + "/{id}", 1))
                 .andExpect(status().isOk());
     }
 }

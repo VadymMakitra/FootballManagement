@@ -8,18 +8,18 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-public class CreateFootballerDtoMapperTest {
+class CreateFootballerDtoMapperTest {
     @InjectMocks
     CreateFootballerDtoMapper mapper;
 
     @Test
-    void convert(){
+    void convert() {
         FootballerDto footballerDto = ModelUtils.getFootballerDto();
         Footballer footballer = ModelUtils.getFootballerForMapper();
 
-        assertEquals(footballer,mapper.convert(footballerDto));
+        assertEquals(footballer, mapper.convert(footballerDto));
     }
 }

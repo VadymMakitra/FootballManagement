@@ -181,9 +181,10 @@ public class ModelUtils {
                 .build();
     }
 
-    public static TransferDto getTransferDto(){
+    public static TransferDto getTransferDto() {
         return TransferDto.builder()
                 .footballerId(1L)
-                .commandId(2L).build();
+                .commandId(2L)
+                .build();
     }
 }

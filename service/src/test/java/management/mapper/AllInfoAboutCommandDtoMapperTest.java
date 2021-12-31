@@ -8,22 +8,22 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-public class AllInfoAboutCommandDtoMapperTest {
+class AllInfoAboutCommandDtoMapperTest {
     @InjectMocks
     AllInfoAboutCommandDtoMapper mapper;
 
     @Test
-    void convert(){
+    void convert() {
         Command command = ModelUtils.getCommandForMapper();
         AllInfoAboutCommandDto dto = ModelUtils.getAllInfoAboutCommandDtoForMapper();
 
-        assertEquals(dto.getCommandId(),mapper.convert(command).getCommandId());
-        assertEquals(dto.getCommandBudget(),mapper.convert(command).getCommandBudget());
-        assertEquals(dto.getCommandCommission(),mapper.convert(command).getCommandCommission());
-        assertEquals(dto.getCommandName(),mapper.convert(command).getCommandName());
-        assertEquals(dto.getInfoAboutFootballerDtos(),mapper.convert(command).getInfoAboutFootballerDtos());
+        assertEquals(dto.getCommandId(), mapper.convert(command).getCommandId());
+        assertEquals(dto.getCommandBudget(), mapper.convert(command).getCommandBudget());
+        assertEquals(dto.getCommandCommission(), mapper.convert(command).getCommandCommission());
+        assertEquals(dto.getCommandName(), mapper.convert(command).getCommandName());
+        assertEquals(dto.getInfoAboutFootballerDtos(), mapper.convert(command).getInfoAboutFootballerDtos());
     }
 }
