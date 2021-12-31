@@ -1,6 +1,5 @@
 package management.mapper;
 
-import management.dto.AllInfoAboutCommandDto;
 import management.dto.AllInfoAboutFootballerDto;
 import management.dto.InfoAboutFootballerCommandDto;
 import management.entity.Footballer;
@@ -18,6 +17,7 @@ public class AllInfoAboutFootballerMapper extends AbstractConverter<Footballer, 
                 .commandId(footballer.getCommand().getId())
                 .commandName(footballer.getCommand().getName())
                 .build();
+
         return AllInfoAboutFootballerDto.builder()
                 .id(footballer.getId())
                 .age(footballer.getAge())
