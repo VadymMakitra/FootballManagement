@@ -6,4 +6,5 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
     <include file="db/changelog/logs/ch-add-table-footballer-Makitra.xml"/>
     <include file="db/changelog/logs/ch-add-table-command-Makitra.xml"/>
+    <include file="db/changelog/logs/ch-insertValuesIntoDb-Makitra.xml"/>
 </databaseChangeLog>
