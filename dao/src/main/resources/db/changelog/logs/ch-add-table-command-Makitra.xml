@@ -6,7 +6,7 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
     <changeSet id="Makitra-2" author="Makitra Vadym">
         <createTable tableName="commands">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="bigint" autoIncrement="true" startWith="5">
                 <constraints primaryKey="true"/>
             </column>
             <column name="name" type="varchar(60)">

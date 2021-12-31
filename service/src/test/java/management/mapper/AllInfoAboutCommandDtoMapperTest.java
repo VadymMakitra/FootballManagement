@@ -24,6 +24,5 @@ class AllInfoAboutCommandDtoMapperTest {
         assertEquals(dto.getCommandBudget(), mapper.convert(command).getCommandBudget());
         assertEquals(dto.getCommandCommission(), mapper.convert(command).getCommandCommission());
         assertEquals(dto.getCommandName(), mapper.convert(command).getCommandName());
-        assertEquals(dto.getInfoAboutFootballerDtos(), mapper.convert(command).getInfoAboutFootballerDtos());
     }
 }

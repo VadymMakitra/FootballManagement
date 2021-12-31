@@ -15,5 +15,4 @@ public class AllInfoAboutCommandDto {
     private String commandName;
     private Integer commandCommission;
     private Long commandBudget;
-    private List<AllInfoAboutFootballerDto> infoAboutFootballerDtos;
 }

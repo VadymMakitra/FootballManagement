@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="Makitra-3" author="Makitra Vadym">
+       <insert tableName="commands">
+           <column name="id"> 1 </column>
+           <column name="name"> Minnesota </column>
+           <column name="commission"> 3 </column>
+           <column name="budget"> 1000000 </column>
+       </insert>
+        <insert tableName="commands">
+           <column name="id"> 2 </column>
+           <column name="name"> Chelsea </column>
+           <column name="commission"> 10 </column>
+           <column name="budget"> 10000000 </column>
+        </insert>
+        <insert tableName="commands">
+           <column name="id"> 3 </column>
+           <column name="name"> Real Madrid </column>
+           <column name="commission"> 8 </column>
+           <column name="budget"> 15000000 </column>
+        </insert>
+        <insert tableName="commands">
+           <column name="id"> 4 </column>
+           <column name="name"> Lviv </column>
+           <column name="commission"> 2 </column>
+           <column name="budget"> 500000 </column>
+       </insert>
+        <insert tableName="footballers">
+            <column name="id"> 1 </column>
+            <column name="first_name"> John </column>
+            <column name="last_name"> Hatson </column>
+            <column name="age"> 32 </column>
+            <column name="experience"> 15 </column>
+            <column name="command_id"> 1 </column>
+        </insert>
+        <insert tableName="footballers">
+            <column name="id"> 2 </column>
+            <column name="first_name"> Michael </column>
+            <column name="last_name"> Schofield </column>
+            <column name="age"> 24 </column>
+            <column name="experience"> 6 </column>
+            <column name="command_id"> 1 </column>
+        </insert>
+        <insert tableName="footballers">
+            <column name="id"> 3 </column>
+            <column name="first_name"> Robert </column>
+            <column name="last_name"> Lewandowski </column>
+            <column name="age"> 34 </column>
+            <column name="experience"> 16 </column>
+            <column name="command_id"> 2 </column>
+        </insert>
+        <insert tableName="footballers">
+            <column name="id"> 4 </column>
+            <column name="first_name"> Lionel </column>
+            <column name="last_name"> Messi </column>
+            <column name="age"> 36 </column>
+            <column name="experience"> 15 </column>
+            <column name="command_id"> 2 </column>
+        </insert>
+        <insert tableName="footballers">
+            <column name="id"> 5 </column>
+            <column name="first_name"> Harry </column>
+            <column name="last_name"> Kane </column>
+            <column name="age"> 28 </column>
+            <column name="experience"> 10 </column>
+            <column name="command_id"> 3 </column>
+        </insert>
+        <insert tableName="footballers">
+            <column name="id"> 6 </column>
+            <column name="first_name"> Liam </column>
+            <column name="last_name"> Nisson </column>
+            <column name="age"> 40 </column>
+            <column name="experience"> 28 </column>
+            <column name="command_id"> 3 </column>
+        </insert>
+        <insert tableName="footballers">
+            <column name="id"> 7 </column>
+            <column name="first_name"> Harry </column>
+            <column name="last_name"> Proter </column>
+            <column name="age"> 20 </column>
+            <column name="experience"> 3 </column>
+            <column name="command_id"> 4 </column>
+        </insert>
+        <insert tableName="footballers">
+            <column name="id"> 8 </column>
+            <column name="first_name"> Ronald </column>
+            <column name="last_name"> Vizl </column>
+            <column name="age"> 21 </column>
+            <column name="experience"> 4 </column>
+            <column name="command_id"> 4 </column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
