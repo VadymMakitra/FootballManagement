@@ -13,20 +13,11 @@ import java.util.stream.Collectors;
 public class AllInfoAboutCommandDtoMapper extends AbstractConverter<Command, AllInfoAboutCommandDto> {
     @Override
     protected AllInfoAboutCommandDto convert(Command command) {
-        List<AllInfoAboutFootballerDto> infoAboutFootballerDtoList = command.getFootballers().stream()
-                .map(footballer -> AllInfoAboutFootballerDto.builder()
-                        .id(footballer.getId())
-                        .age(footballer.getAge())
-                        .fullName(footballer.getFullName())
-                        .experience(footballer.getExperience())
-                        .build())
-                .collect(Collectors.toList());
         return AllInfoAboutCommandDto.builder()
                 .commandId(command.getId())
                 .commandName(command.getName())
                 .commandCommission(command.getCommission())
                 .commandBudget(command.getBudget())
-                .infoAboutFootballerDtos(infoAboutFootballerDtoList)
                 .build();
     }
 }

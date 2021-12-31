@@ -100,7 +100,6 @@ public class ModelUtils {
                 .commandBudget(1000000L)
                 .commandCommission(4)
                 .commandName("Manchester")
-                .infoAboutFootballerDtos(getAllInfoAboutFootballerDto())
                 .build();
     }
 
@@ -110,7 +109,6 @@ public class ModelUtils {
                 .commandBudget(1000000L)
                 .commandCommission(4)
                 .commandName("Manchester")
-                .infoAboutFootballerDtos(getAllInfoAboutFootballerDtoForMapper())
                 .build();
     }
 
