@@ -23,7 +23,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
-@SpringBootTest
 class CommandControllerTest {
     private static final String commandLink = "/command";
     private MockMvc mockMvc;
