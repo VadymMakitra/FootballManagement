@@ -7,9 +7,9 @@ import management.dto.CommandDto;
 import management.dto.FootballerDto;
 import management.entity.Command;
 import management.entity.Footballer;
+import management.exception.CommandNotFoundException;
 import management.repository.CommandRepository;
 import management.repository.FootballerRepository;
-import org.hibernate.tool.schema.spi.CommandAcceptanceException;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -87,7 +87,7 @@ public class CommandServiceImpl implements CommandService {
 
     private Command getCommandById(Long id) {
         return commandRepository.findById(id).orElseThrow(() ->
-                new CommandAcceptanceException(ErrorMessage.COMMAND_NOT_EXIST));
+                new CommandNotFoundException(ErrorMessage.COMMAND_NOT_EXIST));
     }
 
     @Override
